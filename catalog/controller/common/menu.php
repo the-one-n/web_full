@@ -25,10 +25,26 @@ class ControllerCommonMenu extends Controller {
 						'filter_sub_category' => true
 					);
 
-					$children_data[] = array(
-						'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
-						'href'  => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'])
-					);
+                    $products_in_category = $this->model_catalog_product->getProducts(
+                        [
+                            'filter_category_id' => $child['category_id']
+                        ]
+                    );
+
+                    $products = array();
+
+                    //Level 3
+                    foreach ($products_in_category as $product) {
+                        $products[] = array(
+                            'name' => $product['name'],
+                        );
+                    }
+
+                    $children_data[] = array(
+                        'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+                        'href'  => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id']),
+                        'products' => $products,
+                    );
 				}
 
 				// Level 1
