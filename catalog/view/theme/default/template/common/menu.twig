@@ -6,11 +6,11 @@
         <ul class="submenu-sublist">
           {% for child in category.children %}
             <li class="submenu-sublist-item">
-              <a class="submenu-sublist-item__link">{{ child.name }}</a>
+              <a class="submenu-sublist-item__link" href="{{ child.href }}">{{ child.name }}</a>
               <ul class="submenu-sublist">
                 {% for product in child.products %}
                 <li class="submenu-sublist-item">
-                  <a class="submenu-sublist-item__link" href="">{{ product.name }}</a>
+                  <a class="submenu-sublist-item__link" href="{{ product.href }}">{{ product.name }}</a>
                 </li>
                 {% endfor %}
               </ul>

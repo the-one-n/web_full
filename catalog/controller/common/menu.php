@@ -37,6 +37,7 @@ class ControllerCommonMenu extends Controller {
                     foreach ($products_in_category as $product) {
                         $products[] = array(
                             'name' => $product['name'],
+                            'href' => $this->url->link('product/product', 'product_id=' . $product['product_id'])
                         );
                     }
 
