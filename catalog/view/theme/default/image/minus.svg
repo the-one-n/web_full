@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="31px" viewBox="0 0 30 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>minus</title>
+    <desc>Created with Sketch.</desc>
+    <defs/>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-323.000000, -544.000000)">
+            <g id="Basket-Item" transform="translate(212.000000, 320.000000)">
+                <g id="Group-4" transform="translate(83.000000, 240.982036) rotate(-90.000000) translate(-83.000000, -240.982036) translate(66.000000, 182.982036)">
+                    <g id="minus" transform="translate(18.520958, 101.000000) rotate(-270.000000) translate(-18.520958, -101.000000) translate(3.970060, 86.000000)">
+                        <g id="Capa_1">
+                            <ellipse id="Oval" fill="#ED8A19" cx="14.5508982" cy="15" rx="14.5508982" ry="15"/>
+                            <path d="M22.1173653,15 L6.98443114,15" id="Shape" stroke="#FFFFFF" stroke-width="2"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
