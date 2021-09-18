@@ -16,14 +16,13 @@
                 {% if options %}
                     {% for option in options %}
                     {% if option.type == 'text' %}
-                        <i class="icon minus product__remove"></i>
                         <input type="text"
                                name="option[{{ option.product_option_id }}]"
                                value="{{ option.value }}"
                                placeholder="{{ option.name }}"
-                               id="input-option{{ option.product_option_id }}" class="product__counter" />
+                               id="input-option{{ option.product_option_id }}" class="product__counter"
+                               style="border: 3px solid white; border-radius: 20px" />
                         <input type="hidden" name="product_id" value="{{ product_id }}" />
-                        <i class="icon plus product__add"></i>
                     {% endif %}
                 {% endfor %}
                 {% endif %}

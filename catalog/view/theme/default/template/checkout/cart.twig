@@ -1,62 +1,86 @@
 {{ header }}
 <main>
-<div class="cart">
-  {% if attention %}
-    <div class="alert alert-info"><i class="fa fa-info-circle"></i> {{ attention }}
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-    </div>
-  {% endif %}
-  {% if success %}
-    <div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> {{ success }}
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-    </div>
-  {% endif %}
-  {% if error_warning %}
-    <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-    </div>
-  {% endif %}
-  <h1 class="cart-heading">
-    {{ heading_title }}
-  </h1>
-  <div class="cart-body">
-    {% for product in products %}
-      <div class="cart-item">
-        <div class="cart-item__shadowbox"></div>
-        <img src="{{ product.thumb }}" alt="" class="cart-item__img">
-        <div class="cart-item__body">
-          <div class="row">
-            <div class="col-12">
-              <h2 class="cart-item__title">
-                {{ product.name }}
-              </h2>
-              <h4 class="cart-item__count">
-                {{ description }}
-              </h4>
+  <div class="fixmain">
+    <h1 class="checkout-heading">
+      Оформление заказа
+    </h1>
+    <form method="post" enctype="multipart/form-data" class="checkout-products">
+      {% if products %}
+      {% for product in products %}
+        <div class="checkout-product">
+          <div class="checkout-product__cell">
+            <img src="{{ product.thumb }}" alt="" class="checkout-product__img">
+          </div>
+          <div class="checkout-product__cell">
+            <h1 class="checkout-product__heading">{{ product.name }}</h1>
+            <div class="checkout-product__price checkout-product__price-sm-visible">
+              {{ product.price }}
             </div>
-            <div class="col-5">
-              <div class="cart-item__change-count">
-                <button data-toggle="tooltip" title="{{ button_update }}">
-                  <i class="minus cart-item__remove"></i>
-                </button>
-                <input class="cart-item__add-count" name="quantity[{{ product.cart_id }}]" value="{{ product.quantity }}"/>
-                <button data-toggle="tooltip" onclick="cart.remove('{{ product.cart_id }}');">
-                  <i class="plus cart-item__add"></i>
-                </button>
-              </div>
-            </div>
-            <div class="col-1"></div>
-            <div class="col-3">
-              <span class="cart-item__total-cost align-self-end">{{ product.price }}</span>
-            </div>
-            <div class="col-2">
-              <i class="remove cart-item__delete"></i>
+            <div class="checkout-product__count">
+              <i class="icon minus checkout-product__remove"></i>
+              <input type="text" class="checkout-product__counter" value="1">
+              <i class="icon plus checkout-product__add"></i>
             </div>
           </div>
+          <div class="checkout-product__cell checkout-product__cell--sm-hidden">
+            <div class="checkout-product__price">
+              {{ product.price }}
+            </div>
+          </div>
+          <div class="checkout-product__cell">
+            <button class="checkout-product__delete icon remove">
+            </button>
+          </div>
+        </div>
+      {% endfor %}
+      {% endif %}
+    </form>
+    <div class="checkout-personal-info">
+      <h1 class="checkout-heading">Ваши Данные</h1>
+      <div class="checkout-fields">
+        <div class="checkout-field">
+          <label for="name" class="checkout-label">Имя</label>
+          <input type="text" class="checkout-input" name="name" id="name">
+        </div>
+        <div class="checkout-field">
+          <label for="phone" class="checkout-label">Телефон</label>
+          <input type="text" class="checkout-input" name="phone" id="phone">
+        </div>
+        <div class="checkout-field">
+          <label for="address" class="checkout-label">Адрес Доставки</label>
+          <input type="text" class="checkout-input" name="address" id="address">
         </div>
       </div>
-    {% endfor %}
+    </div>
+    <div class="checkout-payment">
+      <h1 class="checkout-heading">Способ оплаты</h1>
+      <div class="checkout-fields">
+        <div class="checkout-field checkout-field--horizontal">
+          <input type="radio" class="checkout-input checkout-input-box" name="payment" id="card">
+          <label for="card" class="checkout-label">Банковский перевод</label>
+        </div>
+        <div class="checkout-field checkout-field--horizontal">
+          <input type="radio" class="checkout-input checkout-input-box" name="payment" id="cash">
+          <label for="cash" class="checkout-label">Оплата наличными</label>
+        </div>
+      </div>
+    </div>
+    <div class="checkout-proceed">
+      <h1 class="checkout-heading">Подтверждение</h1>
+      <div class="checkout-fields">
+        <div class="checkout-field checkout-field--horizontal">
+          <input type="checkbox" id="terms" class="checkout-input checkout-input-box" name="terms-of-service">
+          <label for="terms" class="checkout-label">
+            Я прочитал и ознакомился с <a href="#">Условия соглашения</a>
+          </label>
+        </div>
+        <div class="checkout-field">
+          <a class="checkout-proceed__confirm">
+            Оформить заказ
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 </main>
 {{ footer }}
