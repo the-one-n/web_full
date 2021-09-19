@@ -11,9 +11,17 @@
                         {{ product.price }}
                     </div>
                     <div class="checkout-product__count">
-                        <i class="icon minus checkout-product__remove"></i>
-                        <input type="text" class="checkout-product__counter" value="1">
-                        <i class="icon plus checkout-product__add"></i>
+                        <i class="icon minus checkout-product__remove"
+                           onclick="custom_cart.update({{ product.cart_id }}, {{ product.quantity - 1 }})"
+                           {% if product.quantity == 1 %} disabled {% endif %}
+                           style="cursor:pointer;">
+                        </i>
+                        <input type="text" class="checkout-product__counter" value="{{ product.quantity }}">
+                        <i class="icon plus checkout-product__add"
+                           onclick="custom_cart.update({{ product.cart_id }}, {{ product.quantity + 1 }})"
+                           {% if product.quantity == 1 %} disabled {% endif %}
+                           style="cursor:pointer;">
+                        </i>
                     </div>
                 </div>
                 <div class="checkout-product__cell checkout-product__cell--sm-hidden">
