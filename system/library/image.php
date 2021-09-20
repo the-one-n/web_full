@@ -111,7 +111,7 @@ class Image {
      * @param	string	$file
 	 * @param	int		$quality
      */
-	public function save($file, $quality = 90) {
+	public function save($file, $quality = 100) {
 		$info = pathinfo($file);
 
 		$extension = strtolower($info['extension']);
