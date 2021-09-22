@@ -11,10 +11,28 @@
                 {% for product in child.products %}
                 <li class="product-menu-item">
                   <img class="product-menu-item__img" src="{{ product.thumb }}" alt="{{ product.name }}">
+                  <div class="product-menu-item__shadowbox"></div>
                   <div class="product-menu-item__body">
                     <h3 class="product-menu-item__heading">{{ product.name }}</h3>
-                    <span class="product-menu-item__price">{{ product.price }}</span>
-                    <a class="product-menu-item__link"  href="{{ product.href }}">Заказать</a>
+                    <div class="product-menu-item__order" id="product">
+                      <span class="product-menu-item__price">{{ product.price }}</span>
+                      {% if product.options %}
+                        {% for option in product.options %}
+                          {% if option.type == 'text' %}
+                            <input type="text"
+                                   name="option[{{ option.product_option_id }}]"
+                                   value="{{ option.value }}"
+                                   placeholder="{{ option.name }}"
+                                   id="input-option{{ option.product_option_id }}" class="product-menu-item__count"
+                                   style="border: 3px solid white; border-radius: 20px" />
+                          {% endif %}
+                        {% endfor %}
+                      {% endif %}
+                      <input type="hidden" name="product_id" value="{{ product.id }}" />
+                      <button class="product-menu-item__link product__btn-order" id="button-cart" onclick="addToCart(this)" data-loading-text="{{ text_loading }}">
+                        Заказать
+                      </button>
+                    </div>
                   </div>
                 </li>
                 {% endfor %}
