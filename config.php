@@ -6,9 +6,9 @@ define('HTTP_SERVER', 'http://opencart.prod/');
 define('HTTPS_SERVER', 'http://opencart.prod/');
 
 // DIR
-define('DIR_APPLICATION', 'E:/Soft/OpenServer/domains/opencart.prod/catalog/');
-define('DIR_SYSTEM', 'E:/Soft/OpenServer/domains/opencart.prod/system/');
-define('DIR_IMAGE', 'E:/Soft/OpenServer/domains/opencart.prod/image/');
+define('DIR_APPLICATION', dirname(__FILE__) . "/catalog/");
+define('DIR_SYSTEM', dirname(__FILE__) . "/system/");
+define('DIR_IMAGE', dirname(__FILE__) . "/image/");
 define('DIR_STORAGE', DIR_SYSTEM . '../../ocstorages/storage/');
 define('DIR_LANGUAGE', DIR_APPLICATION . 'language/');
 define('DIR_TEMPLATE', DIR_APPLICATION . 'view/theme/');

@@ -8,11 +8,12 @@ define('HTTPS_SERVER', 'http://opencart.prod/admin/');
 define('HTTPS_CATALOG', 'http://opencart.prod/');
 
 // DIR
-define('DIR_APPLICATION', 'E:/Soft/OpenServer/domains/opencart.prod/admin/');
-define('DIR_SYSTEM', 'E:/Soft/OpenServer/domains/opencart.prod/system/');
-define('DIR_IMAGE', 'E:/Soft/OpenServer/domains/opencart.prod/image/');
+$dir = dirname(dirname(__FILE__));
+define('DIR_APPLICATION', $dir . '/admin/');
+define('DIR_SYSTEM', $dir . '/system/');
+define('DIR_IMAGE', $dir . '/image/');
 define('DIR_STORAGE', DIR_SYSTEM . '../../ocstorages/storage/');
-define('DIR_CATALOG', 'E:/Soft/OpenServer/domains/opencart.prod/catalog/');
+define('DIR_CATALOG', $dir . '/catalog/');
 define('DIR_LANGUAGE', DIR_APPLICATION . 'language/');
 define('DIR_TEMPLATE', DIR_APPLICATION . 'view/template/');
 define('DIR_CONFIG', DIR_SYSTEM . 'config/');
