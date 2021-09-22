@@ -6,11 +6,16 @@
         <ul class="submenu-sublist">
           {% for child in category.children %}
             <li class="submenu-sublist-item">
-              <a class="submenu-sublist-item__link" href="{{ child.href }}">{{ child.name }}</a>
-              <ul class="submenu-sublist">
+              <span class="submenu-sublist-item__link">{{ child.name }}</span>
+              <ul class="product-menu">
                 {% for product in child.products %}
-                <li class="submenu-sublist-item">
-                  <a class="submenu-sublist-item__link" href="{{ product.href }}">{{ product.name }}</a>
+                <li class="product-menu-item">
+                  <img class="product-menu-item__img" src="{{ product.thumb }}" alt="{{ product.name }}">
+                  <div class="product-menu-item__body">
+                    <h3 class="product-menu-item__heading">{{ product.name }}</h3>
+                    <span class="product-menu-item__price">{{ product.price }}</span>
+                    <a class="product-menu-item__link"  href="{{ product.href }}">Заказать</a>
+                  </div>
                 </li>
                 {% endfor %}
               </ul>

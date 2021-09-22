@@ -30,8 +30,7 @@
                     </div>
                 </div>
                 <div class="checkout-product__cell">
-                    <button class="checkout-product__delete icon remove">
-                    </button>
+                    <button class="checkout-product__delete icon remove" onclick="custom_cart.remove({{ product.cart_id }})"></button>
                 </div>
             </div>
         {% endfor %}

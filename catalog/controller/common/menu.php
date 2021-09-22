@@ -3,6 +3,8 @@ class ControllerCommonMenu extends Controller {
 	public function index() {
 		$this->load->language('common/menu');
 
+        $this->load->model('tool/image');
+
 		// Menu
 		$this->load->model('catalog/category');
 
@@ -35,9 +37,17 @@ class ControllerCommonMenu extends Controller {
 
                     //Level 3
                     foreach ($products_in_category as $product) {
+                        if ($product['image']) {
+                            $image = $this->model_tool_image->resize($product['image'], $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_height'));
+                        } else {
+                            $image = $this->model_tool_image->resize('placeholder.png', $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_height'));
+                        }
+
                         $products[] = array(
+                            'thumb' => $image,
                             'name' => $product['name'],
-                            'href' => $this->url->link('product/product', 'product_id=' . $product['product_id'])
+                            'href' => $this->url->link('product/product', 'product_id=' . $product['product_id']),
+                            'price'      => $this->currency->format($product['price'], $this->config->get('config_currency')),
                         );
                     }
 
