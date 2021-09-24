@@ -22,9 +22,9 @@ define('DIR_UPLOAD', DIR_STORAGE . 'upload/');
 
 // DB
 define('DB_DRIVER', 'mysqli');
-define('DB_HOSTNAME', 'localhost');
-define('DB_USERNAME', 'gakure');
-define('DB_PASSWORD', 'gakure');
-define('DB_DATABASE', 'konohagakure');
+define('DB_HOSTNAME', 'sql11.freesqldatabase.com');
+define('DB_USERNAME', 'sql11439627');
+define('DB_PASSWORD', 'wl2vmA915Y');
+define('DB_DATABASE', 'sql11439627');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');
