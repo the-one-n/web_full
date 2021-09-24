@@ -66,6 +66,59 @@
     color: rgba(255, 255, 255, .5);
 }
 
+.bm-post__img {
+    width: 100%;
+}
+
+.bm-post .heading,
+.bm-post .content {
+    padding: 20px;
+}
+
+.bm-post .heading .bm-post__category-link {
+    font-size: 25px;
+    color: #fff;
+}
+
+.bm-post .heading .title {
+    font-size: 80px;
+    color: orange;
+}
+
+.bm-post .description {
+    font-family: 'DaysOne', sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.bm-post .description * {
+    margin-bottom: 10px;
+}
+
+.bm-post .category {
+    text-align: left;
+}
+
+.bm-post__back {
+    margin-top: 100px;
+    display: block;
+    padding: 20px 25px;
+    font-family: "DaysOne", sans-serif;
+    background-color: orange;
+    color: black;
+    transition: .7s ease-in-out;
+    width: 200px;
+    text-align: center;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.bm-post__back:hover {
+    color: white;
+    background: black;
+}
+
 @media screen and (max-width: 1800px) {
     .post-thumb-body {
         width: 100%;
