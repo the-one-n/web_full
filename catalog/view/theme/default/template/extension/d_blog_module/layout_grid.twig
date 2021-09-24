@@ -1,11 +1,12 @@
 <div class="bm-posts">
     <div class="bm-grid bm-grid">
-        <div class="row">
+        <div class="row bm-grid-row">
             {% for post in posts %}
-                    {% if post.row %}
-                        </div><div class="row">
-                    {% endif %}
-                    <div class="bm-grid-item col-sm-{{post.col}}" {% if post.animate %}animate="{{post.animate}}"{% endif %}>
+            {% if post.row %}
+                </div>
+                <div class="row bm-grid-row">
+            {% endif %}
+                    <div class="bm-grid-item col-12" {% if post.animate %}animate="{{post.animate}}"{% endif %}>
                         <div class="bm-grid-item-body animated">
                             {% include template('extension/d_blog_module/post_thumb') with post %}
                         </div>
