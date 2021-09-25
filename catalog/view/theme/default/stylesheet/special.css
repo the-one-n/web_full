@@ -1,0 +1,129 @@
+.specials {
+    padding: 40px;
+}
+
+.specials-heading {
+    font-size: 80px;
+    font-family: 'Pacifico', sans-serif;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.specials-limit, .specials-limit option {
+    font-family: 'DaysOne', sans-serif;
+    color: black;
+}
+
+
+.specials .results {
+    font-family: 'DaysOne', sans-serif;
+}
+
+.specials .results span, .specials .results a {
+    color: white;
+    background-color: rgba(255, 255, 255, .2);
+    border-color: rgba(0, 0, 0, .3);
+}
+
+.specials .results li:hover a, .specials .results li.active span {
+    border-color: #000;
+    color: black;
+    background-color: orange;
+}
+
+.specials-product {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.specials-product .specials-product-image {
+    width: 300px;
+}
+
+.specials-product-info {
+    flex-basis: 65%;
+    margin-left: 20px;
+}
+
+.specials-product-heading {
+    font-size: 50px;
+    font-family: 'Pacifico', sans-serif;
+}
+
+.specials-product-heading a {
+    color: orange;
+}
+
+.specials-product-description {
+    font-size: 20px;
+    font-family: 'DaysOne', sans-serif;
+    margin: 30px 0;
+}
+
+.specials-product-price {
+    font-family: 'DaysOne', sans-serif;
+}
+
+.specials-product-price .price-new {
+    font-size: 30px;
+    margin-right: 20px;
+    color: #ED4337;
+}
+
+.specials-product-price .price-old {
+    font-size: 22px;
+    color: rgba(255, 255, 255, .6);
+    text-decoration: line-through 2px;
+}
+
+.specials-product .button-group {
+    display: flex;
+    justify-content: end;
+    width: 96%;
+}
+
+.specials-product .button-group .specials-product-order {
+    font-size: 20px;
+    padding: 15px 20px;
+    background-color: orange;
+    transition: .4s ease-in-out;
+    color: black;
+    font-family: 'DaysOne', sans-serif;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.specials-product .button-group .specials-product-order:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+@media screen and (max-width: 720px) {
+    .specials-product-heading {
+        font-size: 30px;
+    }
+
+    .specials-product-description {
+        font-size: 15px;
+    }
+
+    .specials-product-price .price-new {
+        font-size: 20px;
+    }
+
+    .specials-product-price .price-old {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .specials-product {
+        flex-direction: column;
+    }
+
+    .specials-product-info {
+        margin-left: 0;
+    }
+}
