@@ -1,0 +1,59 @@
+.button {
+    background-color: orange;
+    color: #000 !important;
+    transition: .5s ease-in-out;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    font-family: 'DaysOne', sans-serif;
+}
+
+.button a, .button span {
+    transition: .5s ease-in-out;
+    color: #000;
+}
+
+.button:hover {
+    background-color: #000;
+    color: #fff !important;
+    border: 1px solid #fff;
+}
+
+.button:hover a, .button:hover span {
+    color: #fff !important;
+}
+
+.auth__details {
+    color: #fff;
+}
+
+.account-contact-info__cell {
+    display: flex;
+    align-items: center;
+    font-family: 'DaysOne', sans-serif;
+}
+
+.account-contact-info__field-name, .account-contact-info__field-value {
+    height: 100%;
+    margin: 0 10px 10px 0;
+}
+
+.account-contact-info__field-value {
+    color: orange;
+}
+
+.newsletter-label {
+    font-size: 20px;
+    width: 100px;
+}
+
+.newsletter-input {
+    flex-basis: 10%;
+}
+
+.newsletter-entry {
+    text-align: left;
+    font-size: 20px;
+}
