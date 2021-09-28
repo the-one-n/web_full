@@ -1651,7 +1651,7 @@ $.magnificPopup.registerModule(IFRAME_NS, {
 
 /*>>iframe*/
 
-/*>>gallery*/
+/*>>gallery.twig*/
 /**
  * Get looped index depending on number of slides
  */
@@ -1686,13 +1686,13 @@ $.magnificPopup.registerModule('gallery', {
 		initGallery: function() {
 
 			var gSt = mfp.st.gallery,
-				ns = '.mfp-gallery';
+				ns = '.mfp-gallery.twig';
 
 			mfp.direction = true; // true - next, false - prev
 
 			if(!gSt || !gSt.enabled ) return false;
 
-			_wrapClasses += ' mfp-gallery';
+			_wrapClasses += ' mfp-gallery.twig';
 
 			_mfpOn(OPEN_EVENT+ns, function() {
 
@@ -1817,7 +1817,7 @@ $.magnificPopup.registerModule('gallery', {
 	}
 });
 
-/*>>gallery*/
+/*>>gallery.twig*/
 
 /*>>retina*/
 
