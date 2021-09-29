@@ -1,6 +1,6 @@
 {% if categories %}
   <ul class="submenu">
-    {% for category in categories %}
+    {% for category in categories if category.name != "Blog" %}
       <li class="submenu-item">
         <a class="submenu-item__link">{{ category.name }}</a>
         {% if category.children is empty %}
