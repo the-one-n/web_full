@@ -1,0 +1,22 @@
+.header-footer-a {
+    position: relative;
+}
+
+.header-footer-a:hover .cart-count {
+    color: white;
+}
+
+.cart-count {
+    position: absolute;
+    font-size: 30px;
+    font-family: 'DaysOne', sans-serif;
+    top: 0;
+    left: 13px;
+    background-color: orange;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    display: block;
+    text-align: center;
+    padding: 5px 20px;
+}

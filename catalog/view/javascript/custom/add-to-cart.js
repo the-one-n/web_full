@@ -16,6 +16,10 @@ function addToCart(e) {
                 $('.alert-dismissible, .text-danger').remove();
                 $('.form-group').removeClass('has-error');
 
+                let count = json.total.match(/(\d+)/)[0];
+
+                $('.cart-count').text(count);
+
                 if (json['error']) {
                     if (json['error']['option']) {
                         for (i in json['error']['option']) {

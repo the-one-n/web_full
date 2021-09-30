@@ -4,6 +4,8 @@ class ControllerCommonHeader extends Controller {
 		// Analytics
 		$this->load->model('setting/extension');
 
+        $this->load->controller('common/cart');
+
 		$data['analytics'] = array();
 
 		$analytics = $this->model_setting_extension->getExtensions('analytics');
@@ -55,6 +57,8 @@ class ControllerCommonHeader extends Controller {
 		}
 
 		$data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', true), $this->customer->getFirstName(), $this->url->link('account/logout', '', true));
+
+        $data['cart_count'] = count($this->cart->getProducts());
 		
 		$data['home'] = $this->url->link('common/home');
 		$data['wishlist'] = $this->url->link('account/wishlist', '', true);
