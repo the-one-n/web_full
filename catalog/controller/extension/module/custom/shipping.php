@@ -4,7 +4,6 @@ class ControllerExtensionModuleCustomShipping extends Controller {
 
 		// Блок отображается
 		if (isset($setting['status']) && (bool)$setting['status'] === true && $this->cart->hasShipping()) {
-
 			$this->load->language('extension/module/custom/shipping');
 
 			// Получаем методы доставки

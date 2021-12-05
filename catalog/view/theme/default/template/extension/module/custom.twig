@@ -13,6 +13,9 @@
 			<div id="custom-cart">
 				{{ cart }}
 			</div>
+			{% if total %}
+				<div id="custom-total">{{ total }}</div>
+			{% endif %}
 		{% endif %}
 
 		<div class="row">
@@ -23,9 +26,9 @@
 				{% if customer and not logged %}
 					<div id="custom-customer">{{ customer }}</div>
 				{% endif %}
-				{% if shipping and shipping != constant('false') %}
-					<div id="custom-shipping">{{ shipping }}</div>
-				{% endif %}
+{#				{% if shipping and shipping != constant('false') %}#}
+{#					<div id="custom-shipping">{{ shipping }}</div>#}
+{#				{% endif %}#}
 				{% if payment %}
 					<div id="custom-payment">{{ payment }}</div>
 				{% endif %}
@@ -37,9 +40,6 @@
 				{{ column_right }}
 				{% if module %}
 					<div id="custom-module">{{ module }}</div>
-				{% endif %}
-				{% if total %}
-					<div id="custom-total">{{ total }}</div>
 				{% endif %}
 			</div>
 		</div>
@@ -82,10 +82,21 @@
 <script src="/catalog/view/javascript/custom/cart.js"></script>
 
 <script>
+	const cart = document.querySelector('#custom-cart');
+	const customer = document.querySelector('#custom-customer');
+
+	if (cart.innerHTML.includes('Unknown')) {
+		cart.innerHTML = '';
+	}
+
+	if (customer.innerHTML.includes('Unknown')) {
+		customer.innerHTML = '';
+	}
+</script>
+
+<script>
 // $(document).ready(function() {
   $('#button-custom-order').on('click', function(){
-	  console.log('testclick');
-
   	{% if (not logged) %} 
 
 			checkoutCustomer()

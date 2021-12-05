@@ -7,4 +7,4 @@ $_['text_date_added']   = 'Дата заказа:';
 $_['text_order_status'] = 'Состояние заказа:';
 $_['text_product']      = 'Товары';
 $_['text_total']        = 'Итого';
-$_['text_comment']      = 'Комментарий к Вашему заказу:';
+$_['text_comment']      = 'Адрес доставки:';

@@ -1,8 +1,4 @@
-<table class="table table-bordered">
-	{% for total in totals %} 
-		<tr>
-			<td class="text-right"><strong>{{ total.title }}:</strong></td>
-			<td class="text-right">{{ total.text }}</td>
-		</tr>
-	{% endfor %} 
-</table>
+<tr>
+	<td class="text-right"><strong>{{ totals[0].title }}:</strong></td>
+	<td class="text-right">{{ totals[0].text }}</td>
+</tr>

@@ -1,4 +1,4 @@
 <?php
 
-$_['heading_comment'] = 'Комментарий к заказу';
-$_['entry_comment'] = 'Комментирий';
+$_['heading_comment'] = 'Адрес доставки';
+$_['entry_comment'] = 'Адрес Доставки';

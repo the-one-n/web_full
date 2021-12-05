@@ -1,0 +1,65 @@
+#custom-total {
+    font-size: 24px;
+}
+
+#input-comment {
+    resize: none;
+    height: 100px;
+    max-width: 60%;
+    border: 0;
+    border-bottom: 5px solid rgba(225, 225, 225, 0.5);
+    font-size: 1.3vw;
+    transition: .7s ease-in-out;
+    background: none;
+    color: #fff;
+}
+
+.cart-count {
+    font-size: 1em;
+    width: 2em;
+    height: 1em;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -25px;
+}
+
+.header-footer-a {
+    display: block;
+}
+
+.custom-comment-heading {
+    margin-bottom: 30px;
+}
+
+.custom-comment-select {
+    height: 40px;
+    max-width: 40%;
+    border: 0;
+    border-bottom: 5px solid rgba(225, 225, 225, 0.5);
+    font-size: 1.3vw;
+    transition: .7s ease-in-out;
+    background: none;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.custom-comment-option {
+    height: 40px;
+    max-width: 40%;
+    border: 0;
+    font-size: 1.3vw;
+    transition: .7s ease-in-out;
+    background: #000;
+    color: #fff;
+}
+
+@media screen and (max-width: 720px) {
+    .cart-count {
+        font-size: 1.3em;
+        width: 3em;
+        height: 2em;
+        top: -15px;
+    }
+}

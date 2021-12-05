@@ -1,5 +1,30 @@
-<h2>{{ heading_comment }}</h2>
-<div class="form-group">
-	<label class="control-label" for="input-comment">{{ entry_comment }}</label>
-	<textarea name="comment" rows="5" placeholder="{{ entry_comment }}" id="input-comment" class="form-control">{{ comment }}</textarea>
+<select name="method" id="" class="custom-comment-select">
+	<option value="delivery" class="custom-comment-option">Доставка</option>
+	<option value="self" class="custom-comment-option">Самовывоз</option>
+</select>
+<div class="custom-comment-field">
+	<h2 class="custom-comment-heading">Адрес доставки</h2>
+	<div class="form-group">
+		<textarea name="comment" rows="5" placeholder="{{ entry_comment }}" id="input-comment" class="form-control">{{ comment }}</textarea>
+	</div>
 </div>
+
+<script>
+	const select = document.querySelector('.custom-comment-select');
+	const commentField = document.querySelector('.custom-comment-field');
+	const input = document.querySelector('#input-comment');
+	let option = 'self';
+
+	select.addEventListener('change', e => {
+		option = e.target.value;
+		console.log(option);
+
+		if (option === 'self') {
+			commentField.style.display = 'none';
+			input.innerHTML = 'Самовывоз';
+			input.innerText = 'Самовывоз';
+		} else if (option === 'delivery') {
+			commentField.style.display = 'block';
+		}
+	})
+</script>
