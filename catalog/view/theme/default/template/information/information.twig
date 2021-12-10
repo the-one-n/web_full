@@ -1,21 +1,9 @@
 {{ header }}
-<div id="information-information" class="container">
-  <ul class="breadcrumb">
-    {% for breadcrumb in breadcrumbs %}
-    <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
-    {% endfor %}
-  </ul>
-  <div class="row">{{ column_left }}
-    {% if column_left and column_right %}
-    {% set class = 'col-sm-6' %}
-    {% elseif column_left or column_right %}
-    {% set class = 'col-sm-9' %}
-    {% else %}
-    {% set class = 'col-sm-12' %}
-    {% endif %}
-    <div id="content" class="{{ class }}">{{ content_top }}
-      <h1>{{ heading_title }}</h1>
-      {{ description }}{{ content_bottom }}</div>
-    {{ column_right }}</div>
-</div>
+<main>
+  <div class="delivery">
+    <h1 class="delivery-heading">Информация о доставке</h1>
+    <span class="delivery-comment">Кликните по цветному району чтобы посмотреть сколько будет стоить доставка туда</span>
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A28605b3c3dfcf56cbb7dfc2a9923c1c11d75108a59150b7d5eb1fe7db633e3d2&amp;width=1136&amp;height=720&amp;lang=ru_RU&amp;scroll=true"></script>
+  </div>
+</main>
 {{ footer }}
