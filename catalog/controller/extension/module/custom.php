@@ -66,37 +66,67 @@ class ControllerExtensionModuleCustom extends Controller {
 			// 	$hasTime = false;
 			// }
 
-			if ($this->cart->countProducts() > 0) {
+//			if ($this->cart->countProducts() > 0) {
+//
+//				$this->load->model('setting/setting');
+//				$setting = $this->model_setting_setting->getSetting('module_custom');
+//
+//				$this->load->model('extension/module/custom/custom');
+//
+//				$errors = $this->model_extension_module_custom_custom->validate();
+//
+//				// Подгружаем настройки
+//				if ($setting['module_custom_status'] && (!empty($errors)/* || !$hasTime*/)){
+//
+//					$data['cart'] = $this->getChildController('cart', $setting['module_custom_cart']);
+//					$data['errors'] = $errors;
+//
+//				} elseif ($setting['module_custom_status']) {
+//
+//					$data['login'] 		= $this->getChildController('login', $setting['module_custom_login']);
+//					$data['cart'] 		= $this->getChildController('cart', $setting['module_custom_cart']);
+//					$data['customer'] = $this->getChildController('customer', $setting['module_custom_customer']);
+//					$data['shipping'] = $this->getChildController('shipping', $setting['module_custom_shipping']);
+//					$data['payment'] 	= $this->getChildController('payment', $setting['module_custom_payment']);
+//					$data['comment'] 	= $this->getChildController('comment', $setting['module_custom_comment']);
+//					$data['module'] 	= $this->getChildController('module', $setting['module_custom_module']);
+//					$data['total'] 		= $this->getChildController('total', $setting['module_custom_total']);
+//
+//				}
+//
+//			} else {
+//				$data['empty'] = $this->language->get('entry_empty');
+//			}
 
-				$this->load->model('setting/setting');
-				$setting = $this->model_setting_setting->getSetting('module_custom');
+            $this->load->model('setting/setting');
+            $setting = $this->model_setting_setting->getSetting('module_custom');
 
-				$this->load->model('extension/module/custom/custom');
+            $this->load->model('extension/module/custom/custom');
 
-				$errors = $this->model_extension_module_custom_custom->validate();
+            $errors = $this->model_extension_module_custom_custom->validate();
 
-				// Подгружаем настройки
-				if ($setting['module_custom_status'] && (!empty($errors)/* || !$hasTime*/)){
+            // Подгружаем настройки
+            if ($setting['module_custom_status'] && (!empty($errors)/* || !$hasTime*/)){
 
-					$data['cart'] = $this->getChildController('cart', $setting['module_custom_cart']);
-					$data['errors'] = $errors;
+                $data['cart'] = $this->getChildController('cart', $setting['module_custom_cart']);
+                $data['errors'] = $errors;
 
-				} elseif ($setting['module_custom_status']) {
+            } elseif ($setting['module_custom_status']) {
 
-					$data['login'] 		= $this->getChildController('login', $setting['module_custom_login']);
-					$data['cart'] 		= $this->getChildController('cart', $setting['module_custom_cart']);
-					$data['customer'] = $this->getChildController('customer', $setting['module_custom_customer']);
-					$data['shipping'] = $this->getChildController('shipping', $setting['module_custom_shipping']);
-					$data['payment'] 	= $this->getChildController('payment', $setting['module_custom_payment']);
-					$data['comment'] 	= $this->getChildController('comment', $setting['module_custom_comment']);
-					$data['module'] 	= $this->getChildController('module', $setting['module_custom_module']);
-					$data['total'] 		= $this->getChildController('total', $setting['module_custom_total']);
+                $data['login'] 		= $this->getChildController('login', $setting['module_custom_login']);
+                $data['cart'] 		= $this->getChildController('cart', $setting['module_custom_cart']);
+                $data['customer'] = $this->getChildController('customer', $setting['module_custom_customer']);
+                $data['shipping'] = $this->getChildController('shipping', $setting['module_custom_shipping']);
+                $data['payment'] 	= $this->getChildController('payment', $setting['module_custom_payment']);
+                $data['comment'] 	= $this->getChildController('comment', $setting['module_custom_comment']);
+                $data['module'] 	= $this->getChildController('module', $setting['module_custom_module']);
+                $data['total'] 		= $this->getChildController('total', $setting['module_custom_total']);
 
-				}
+            }
 
-			} else {
-				$data['empty'] = $this->language->get('entry_empty');
-			}
+            if ($this->cart->countProducts() == 0) {
+                $data['empty'] = $this->language->get('entry_empty');
+            }
 
 			if ($this->config->get('config_checkout_id')) {
 				$this->load->model('catalog/information');
