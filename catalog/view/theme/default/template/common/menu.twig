@@ -45,6 +45,9 @@
                       <img class="product-menu-item__img" src="{{ product.thumb }}" alt="{{ product.name }}">
                       <div class="product-menu-item__shadowbox"></div>
                       <div class="product-menu-item__body">
+                        <div class="product-menu-item__description">
+                          {{ product.description }}
+                        </div>
                         <h3 class="product-menu-item__heading">{{ product.name }}</h3>
                         <div class="product-menu-item__order" id="product">
                           <span class="product-menu-item__price">{{ product.price }}</span>
