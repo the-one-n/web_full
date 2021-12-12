@@ -126,6 +126,7 @@ class ControllerExtensionModuleCustom extends Controller {
 
             if ($this->cart->countProducts() == 0) {
                 $data['empty'] = $this->language->get('entry_empty');
+                $data['customer'] = "";
             }
 
 			if ($this->config->get('config_checkout_id')) {
@@ -148,9 +149,11 @@ class ControllerExtensionModuleCustom extends Controller {
 				$data['agree'] = '';
 			}
 
-		} elseif ($this->config->get('module_custom_status') && !$time['status']) {
-
-		} else {
+		}
+//        elseif ($this->config->get('module_custom_status') && !$time['status']) {
+//
+//		}
+        else {
 			$data['errors'][] = $this->language->get('error_module_off');
 		}
 
