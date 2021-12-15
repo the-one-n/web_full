@@ -1,5 +1,13 @@
 <div class="swiper-viewport">
   <div id="carousel{{ module }}" class="splide">
+    <div class="splide__arrows">
+      <button class="splide__arrow splide__arrow--prev">
+        <img src="catalog/view/theme/default/image/arrow-left.svg" alt="">
+      </button>
+      <button class="splide__arrow splide__arrow--next">
+        <img src="catalog/view/theme/default/image/arrow-right.svg" alt="">
+      </button>
+    </div>
     <div class="splide__track">
       <ul class="splide__list">
         {% for banner in banners %}
@@ -22,6 +30,7 @@
     rewind: true,
     autoplay: true,
     pauseOnHover: false,
+    arrows: true,
   }
 
   new Splide('.splide', splideOptions).mount();

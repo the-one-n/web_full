@@ -78,8 +78,6 @@ class ControllerExtensionModuleCustomcustomer extends Controller {
 
 		$data['custom_fields'] = $this->model_account_custom_field->getCustomFields();
 
-		
-
 		foreach($data['custom_fields'] as $key => $field){
 
 			if ($field['location'] != 'account') {
