@@ -1,5 +1,7 @@
-<footer>
-  <iframe class="footer-video" width="100%" height="200" src="https://www.youtube.com/embed/L0m9ZuY_kwg?controls=0&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<footer  style="display: flex;
+flex-direction: column;
+justify-content: space-between;">
+  <div><iframe class="footer-video" width="100%" height="200" src="https://www.youtube.com/embed/L0m9ZuY_kwg?controls=0&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   <div class="instagram">
     <a href="https://www.instagram.com"><img src="catalog/view/theme/default/image/inst.jpg" alt="" width="100%" height="90"></a>
   </div>
@@ -8,7 +10,12 @@
   </div>
   <div class="facebook">
     <a href="https://www.facebook.com"><img src="catalog/view/theme/default/image/фейсбук.jpg" alt="" width="100%" height="90"></a>
-  </div>
+  </div></div>
+  <div style="display:flex; justify-content: flex-end; flex-direction: column; text-align:center; "><div class="footer-info" style="color:white; background: black; font-family: "Pacifico",serif;"><h4>ООО "Анимеворлд"
+Адрес: г. Минск, ул. Налибокская 1, ТЦ "Караван"
+р/с BY48REDJ30121003871470100933 в ЗАО "РРБ-Банк" 
+Код REDJBY22    
+УНП 719278791</h4></div></div>
 </footer>
 {% for script in scripts %}
 <script src="{{ script }}" type="text/javascript"></script>
