@@ -16,6 +16,7 @@
                            {% if product.quantity == 1 %} disabled {% endif %}
                            style="cursor:pointer;">
                         </i>
+                        <div class="button-load"><i class="fa fa-spinner fa-spin"></i></div>
                         <input type="text" class="checkout-product__counter" value="{{ product.quantity }}">
                         <i class="icon plus checkout-product__add"
                            onclick="custom_cart.update({{ product.cart_id }}, {{ product.quantity + 1 }})"

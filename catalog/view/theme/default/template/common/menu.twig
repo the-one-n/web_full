@@ -42,7 +42,9 @@
                 <ul class="product-menu">
                   {% for product in child.products %}
                     <li class="product-menu-item">
-                      <img class="product-menu-item__img" src="{{ product.thumb }}" alt="{{ product.name }}">
+                      <figure class="product-menu-item__img-wrapper">
+                        <img class="product-menu-item__img" src="{{ product.thumb }}" alt="{{ product.name }}">
+                      </figure>
                       <div class="product-menu-item__shadowbox"></div>
                       <div class="product-menu-item__body">
                         <div class="product-menu-item__description">
@@ -55,17 +57,28 @@
                           {% if product.options %}
                             {% for option in product.options %}
                               {% if option.type == 'text' %}
-                                <input type="text"
+                                <input
                                        name="option[{{ option.product_option_id }}]"
                                        value="{{ option.value }}"
-                                       placeholder="{{ option.name }}"
-                                       id="input-option{{ option.product_option_id }}" class="product-menu-item__count"
-                                       style="border: 3px solid white; border-radius: 20px" />
+                                       placeholder=""
+                                       id="input-option{{ option.product_option_id }}"
+                                       style="border: 3px solid white; border-radius: 20px" type="hidden" />
                               {% endif %}
                             {% endfor %}
                           {% endif %}
+                          <input type="text"
+                                 name="quantity"
+                                 value="{{ option.value }}"
+                                 placeholder=""
+                                 onchange="$(this).attr('value', $(this).val())"
+                                 id="input-option{{ option.product_option_id }}" class="product-menu-item__count"
+                                 style="border: 3px solid white; border-radius: 20px" />
                           <input type="hidden" name="product_id" value="{{ product.id }}" />
-                          <button class="product-menu-item__link product__btn-order" id="button-cart" onclick="addToCart(this)" data-loading-text="{{ text_loading }}">
+                          <button class="product-menu-item__count-submit"
+                                    onclick="addToCart(this)"
+                                    data-loading-text="<i class='fa fa-spinner fa-spin'></i>"><i class="fa fa-check"></i></button>
+                          <button class="product-menu-item__link product__btn-order" id="button-cart"
+                                  onclick="addToCartWithSelectedQuantity(this)" data-loading-text="{{ text_loading }}">
                             Заказать
                           </button>
                         </div>

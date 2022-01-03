@@ -12,9 +12,10 @@ const custom_cart = {
 			beforeSend: function(){
 				$('.alert').remove();
 				$('[role="tooltip"]').remove();
+				$('.checkout-product__counter').css({display: "none"});
+				$('.button-load').css({display: "flex"});
 			},
 			success: function(json) {
-
 				if (json['empty']){
 					location.reload();
 				}

@@ -56,3 +56,12 @@ function addToCart(e) {
             }
         });
 }
+
+function addToCartWithSelectedQuantity(e) {
+    const $e = $(e);
+    const $counter = $e.siblings('.product-menu-item__count ');
+    $counter.css("display", "block");
+    $counter.val($counter.data('loading-text'));
+    $e.siblings('.product-menu-item__count-submit').css("display", "block");
+    $e.css("display", "none");
+}
