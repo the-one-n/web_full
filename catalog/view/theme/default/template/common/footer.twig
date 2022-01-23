@@ -23,6 +23,20 @@ justify-content: space-between;">
 {% endfor %}
 <script src="catalog/view/javascript/index.js"></script>
 <script src="catalog/view/javascript/custom/add-to-cart.js"></script>
+<script><!--
+  let splideOptions = {
+    type: 'loop',
+    rewind: true,
+    autoplay: true,
+    pauseOnHover: false,
+  }
+
+  var elms = document.getElementsByClassName( 'splide' );
+
+  for ( var i = 0; i < elms.length; i++ ) {
+    new Splide( elms[ i ] ).mount();
+  }
+--></script>
 <!--
 OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
 Please donate via PayPal to donate@opencart.com

@@ -1,9 +1,9 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://konohagakure.by/');
+define('HTTP_SERVER', 'http://opencart.prod/');
 
 // HTTPS
-define('HTTPS_SERVER', 'https://konohagakure.by/');
+define('HTTPS_SERVER', 'https://opencart.prod/');
 
 // DIR
 define('DIR_APPLICATION', dirname(__FILE__) . "/catalog/");
@@ -23,8 +23,8 @@ define('DIR_UPLOAD', DIR_STORAGE . 'upload/');
 // DB
 define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', 'localhost');
-define('DB_USERNAME', 'flashpro_gakure');
-define('DB_PASSWORD', 'gakure1488_');
-define('DB_DATABASE', 'flashpro_konohagakure');
+define('DB_USERNAME', 'gakure');
+define('DB_PASSWORD', 'gakure');
+define('DB_DATABASE', 'konohagakure');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');

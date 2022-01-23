@@ -2,7 +2,7 @@
 <main id="product-search">
   <div class="specials">
     <div id="content" class="{{ class }}">
-      <h2 class="specials-heading">{{ heading_title }}</h2>
+      <h2 class="specials-heading">Бизнес-ланчи</h2>
       {% if products %}
 {#      <div class="row">#}
 {#        <div class="col-md-3 col-xs-6">#}
@@ -38,7 +38,6 @@
                   {{ product.price }}
                   {% else %}
                   <span class="price-new">{{ product.special }}</span>
-                  <span class="price-old">{{ product.price }}</span>
                   {% endif %}
                   {% if product.tax %} <span class="price-tax">{{ text_tax }} {{ product.tax }}</span> {% endif %} </p>
                 {% endif %}
